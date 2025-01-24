@@ -1,0 +1,556 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5DCFAEF6-8604-484B-B48E-741DBC6A0F5F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FinalProject</RootNamespace>
+    <AssemblyName>FinalProject</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44305</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Funko.mdf" />
+    <Content Include="App_Data\Funko_log.ldf">
+      <DependentUpon>Funko.mdf</DependentUpon>
+    </Content>
+    <Content Include="Homepage.aspx" />
+    <Content Include="imagesgroceries\Big Eye Merah Tanda Bersih 500g - 700g, , hi-res.png" />
+    <Content Include="imagesgroceries\Big Eye Siakap Bersih %28Medium%29 300g - 400g, , hi-res.png" />
+    <Content Include="imagesgroceries\Big Eye Sotong Putih 300g, , hi-res.png" />
+    <Content Include="imagesgroceries\Big Eye Tenggiri Slice 200g - 250g, , hi-res.png" />
+    <Content Include="imagesgroceries\Big Eye Udang Putih 300g, , hi-res.png" />
+    <Content Include="imagesgroceries\Black Mussel Whole 1kg, , hi-res.png" />
+    <Content Include="imagesgroceries\Brightfarms Asparagus 250g, , hi-res.png" />
+    <Content Include="imagesgroceries\Brightfarms Black Seedless Grapes 500g, , hi-res.png" />
+    <Content Include="imagesgroceries\Brightfarms Chinese Cabbage 800g -1kg, , hi-res.png" />
+    <Content Include="imagesgroceries\brightfarms Frozen Salmon Fillet Portion 160g - 180g, , hi-res.png" />
+    <Content Include="imagesgroceries\Brightfarms Granny Smith Green Apple 6pcs, , hi-res.png" />
+    <Content Include="imagesgroceries\Brightfarms Japanese Cucumber 350g, , hi-res.png" />
+    <Content Include="imagesgroceries\Brightfarms Large Eggs 10pcs, , hi-res.png" />
+    <Content Include="imagesgroceries\Brightfarms Long Bean 250g, , hi-res.png" />
+    <Content Include="imagesgroceries\Brightfarms Medium Eggs with Vitamin E 15pcs, , hi-res.png" />
+    <Content Include="imagesgroceries\brightfarms Siew Pak Choy 200g, , hi-res.png" />
+    <Content Include="imagesgroceries\Celery Australia 800g - 1kg, , hi-res.png" />
+    <Content Include="imagesgroceries\China Carrot 500g, , hi-res.png" />
+    <Content Include="imagesgroceries\GST Frozen Cooked Boston Lobster 400g - 450g, , hi-res.png" />
+    <Content Include="imagesgroceries\Gst Frozen Crab Steak Cleaned 300g, , hi-res.png" />
+    <Content Include="imagesgroceries\Hyfresh Fresh Chicken Boneless Breast %28Pack%29 450g, , hi-res.png" />
+    <Content Include="imagesgroceries\Hyfresh Fresh Chicken Drumstick Minimum %28Pack%29 470g, , hi-res.png" />
+    <Content Include="imagesgroceries\Hyfresh Fresh Chicken Fillet %28Pack%29 380g, , hi-res.png" />
+    <Content Include="imagesgroceries\Kingfisher Kembung Rebus 300g, , hi-res.png" />
+    <Content Include="imagesgroceries\LKH Salted Duck Eggs 4pcs, , hi-res.png" />
+    <Content Include="imagesgroceries\Love Frozen Lala 400g, , hi-res.png" />
+    <Content Include="imagesgroceries\Nutriplus Lacto Plus 111 Drumstick 400g - 450g, , hi-res.png" />
+    <Content Include="imagesgroceries\Nutriplus Lacto Plus 111 Skinless Breast Boneless 400g - 450g, , hi-res.png" />
+    <Content Include="imagesgroceries\Nutriplus Lacto Plus 111 Whole Leg %28Bone-in%29 400g - 500g, , hi-res.png" />
+    <Content Include="imagesgroceries\Nutriplus Lacto Plus 111 Whole Wings 400g - 450g, , hi-res.png" />
+    <Content Include="Styles\Main.css" />
+    <Content Include="Templates\csslog\main.css" />
+    <Content Include="Templates\csslog\util.css" />
+    <Content Include="Templates\css\main.css" />
+    <Content Include="Templates\css\util.css" />
+    <Content Include="Templates\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Templates\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Templates\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Templates\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Templates\fonts\iconic\css\material-design-iconic-font.css" />
+    <Content Include="Templates\fonts\iconic\css\material-design-iconic-font.min.css" />
+    <Content Include="Templates\fonts\iconic\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="Templates\fonts\linearicons-v1.0.0\icon-font.min.css" />
+    <Content Include="Templates\fonts\linearicons-v1.0.0\WebFont\Linearicons-Free.svg" />
+    <Content Include="Templates\fonts\Montserrat\OFL.txt" />
+    <Content Include="Templates\fonts\PlayfairDisplay\OFL.txt" />
+    <Content Include="Templates\images\1.png" />
+    <Content Include="Templates\images\2.png" />
+    <Content Include="Templates\images\3.png" />
+    <Content Include="Templates\images\4.png" />
+    <Content Include="Templates\images\about-01.jpg" />
+    <Content Include="Templates\images\about-02.jpg" />
+    <Content Include="Templates\images\avatar-01.jpg" />
+    <Content Include="Templates\images\banner-01.jpg" />
+    <Content Include="Templates\images\banner-02.jpg" />
+    <Content Include="Templates\images\banner-03.jpg" />
+    <Content Include="Templates\images\banner-04.jpg" />
+    <Content Include="Templates\images\banner-05.jpg" />
+    <Content Include="Templates\images\banner-06.jpg" />
+    <Content Include="Templates\images\banner-07.jpg" />
+    <Content Include="Templates\images\banner-08.jpg" />
+    <Content Include="Templates\images\banner-09.jpg" />
+    <Content Include="Templates\images\banner_web-02.jpg" />
+    <Content Include="Templates\images\bg-01.jpg" />
+    <Content Include="Templates\images\bg-02.jpg" />
+    <Content Include="Templates\images\bg.jpg" />
+    <Content Include="Templates\images\blog-01.jpg" />
+    <Content Include="Templates\images\blog-02.jpg" />
+    <Content Include="Templates\images\blog-03.jpg" />
+    <Content Include="Templates\images\blog-04.jpg" />
+    <Content Include="Templates\images\blog-05.jpg" />
+    <Content Include="Templates\images\blog-06.jpg" />
+    <Content Include="Templates\images\c1.png" />
+    <Content Include="Templates\images\C10.png" />
+    <Content Include="Templates\images\C11.png" />
+    <Content Include="Templates\images\C12.png" />
+    <Content Include="Templates\images\C13.png" />
+    <Content Include="Templates\images\C14.png" />
+    <Content Include="Templates\images\C15.png" />
+    <Content Include="Templates\images\C16.png" />
+    <Content Include="Templates\images\c17.png" />
+    <Content Include="Templates\images\C2.png" />
+    <Content Include="Templates\images\c3.png" />
+    <Content Include="Templates\images\c4.png" />
+    <Content Include="Templates\images\C5.png" />
+    <Content Include="Templates\images\C6.png" />
+    <Content Include="Templates\images\C7.png" />
+    <Content Include="Templates\images\C8.png" />
+    <Content Include="Templates\images\C9.png" />
+    <Content Include="Templates\images\funko-pop.jpg" />
+    <Content Include="Templates\images\gallery-01.jpg" />
+    <Content Include="Templates\images\gallery-02.jpg" />
+    <Content Include="Templates\images\gallery-03.jpg" />
+    <Content Include="Templates\images\gallery-04.jpg" />
+    <Content Include="Templates\images\gallery-05.jpg" />
+    <Content Include="Templates\images\gallery-06.jpg" />
+    <Content Include="Templates\images\gallery-07.jpg" />
+    <Content Include="Templates\images\gallery-08.jpg" />
+    <Content Include="Templates\images\gallery-09.jpg" />
+    <Content Include="Templates\images\icons\favicon.png" />
+    <Content Include="Templates\images\icons\icon-close.png" />
+    <Content Include="Templates\images\icons\icon-close2.png" />
+    <Content Include="Templates\images\icons\icon-email.png" />
+    <Content Include="Templates\images\icons\icon-heart-01.png" />
+    <Content Include="Templates\images\icons\icon-heart-02.png" />
+    <Content Include="Templates\images\icons\icon-next.png" />
+    <Content Include="Templates\images\icons\icon-pay-01.png" />
+    <Content Include="Templates\images\icons\icon-pay-02.png" />
+    <Content Include="Templates\images\icons\icon-pay-03.png" />
+    <Content Include="Templates\images\icons\icon-pay-04.png" />
+    <Content Include="Templates\images\icons\icon-pay-05.png" />
+    <Content Include="Templates\images\icons\icon-prev.png" />
+    <Content Include="Templates\images\icons\logo-01.png" />
+    <Content Include="Templates\images\icons\logo-02.png" />
+    <Content Include="Templates\images\icons\pin.png" />
+    <Content Include="Templates\images\item-cart-01.jpg" />
+    <Content Include="Templates\images\item-cart-02.jpg" />
+    <Content Include="Templates\images\item-cart-03.jpg" />
+    <Content Include="Templates\images\item-cart-04.jpg" />
+    <Content Include="Templates\images\item-cart-05.jpg" />
+    <Content Include="Templates\images\logo2.png" />
+    <Content Include="Templates\images\product-01.jpg" />
+    <Content Include="Templates\images\product-02.jpg" />
+    <Content Include="Templates\images\product-03.jpg" />
+    <Content Include="Templates\images\product-04.jpg" />
+    <Content Include="Templates\images\product-05.jpg" />
+    <Content Include="Templates\images\product-06.jpg" />
+    <Content Include="Templates\images\product-07.jpg" />
+    <Content Include="Templates\images\product-08.jpg" />
+    <Content Include="Templates\images\product-09.jpg" />
+    <Content Include="Templates\images\product-10.jpg" />
+    <Content Include="Templates\images\product-11.jpg" />
+    <Content Include="Templates\images\product-12.jpg" />
+    <Content Include="Templates\images\product-13.jpg" />
+    <Content Include="Templates\images\product-14.jpg" />
+    <Content Include="Templates\images\product-15.jpg" />
+    <Content Include="Templates\images\product-16.jpg" />
+    <Content Include="Templates\images\product-detail-01.jpg" />
+    <Content Include="Templates\images\product-detail-02.jpg" />
+    <Content Include="Templates\images\product-detail-03.jpg" />
+    <Content Include="Templates\images\product-min-01.jpg" />
+    <Content Include="Templates\images\product-min-02.jpg" />
+    <Content Include="Templates\images\product-min-03.jpg" />
+    <Content Include="Templates\images\slide-01.jpg" />
+    <Content Include="Templates\images\slide-02.jpg" />
+    <Content Include="Templates\images\slide-03.jpg" />
+    <Content Include="Templates\images\slide-04.jpg" />
+    <Content Include="Templates\images\slide-05.jpg" />
+    <Content Include="Templates\images\slide-06.jpg" />
+    <Content Include="Templates\images\slide-07.jpg" />
+    <Content Include="Templates\images\thumb-01.jpg" />
+    <Content Include="Templates\images\thumb-02.jpg" />
+    <Content Include="Templates\images\thumb-03.jpg" />
+    <Content Include="Templates\js\main.js" />
+    <Content Include="Templates\vendorlog\animate\animate.css" />
+    <Content Include="Templates\vendorlog\animsition\css\animsition.css" />
+    <Content Include="Templates\vendorlog\animsition\css\animsition.min.css" />
+    <Content Include="Templates\vendorlog\animsition\js\animsition.js" />
+    <Content Include="Templates\vendorlog\animsition\js\animsition.min.js" />
+    <Content Include="Templates\vendorlog\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Templates\vendorlog\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Templates\vendorlog\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Templates\vendorlog\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Templates\vendorlog\bootstrap\css\bootstrap.css" />
+    <Content Include="Templates\vendorlog\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Templates\vendorlog\bootstrap\js\bootstrap.js" />
+    <Content Include="Templates\vendorlog\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Templates\vendorlog\bootstrap\js\popper.js" />
+    <Content Include="Templates\vendorlog\bootstrap\js\popper.min.js" />
+    <Content Include="Templates\vendorlog\bootstrap\js\tooltip.js" />
+    <Content Include="Templates\vendorlog\countdowntime\countdowntime.js" />
+    <Content Include="Templates\vendorlog\css-hamburgers\hamburgers.css" />
+    <Content Include="Templates\vendorlog\css-hamburgers\hamburgers.min.css" />
+    <Content Include="Templates\vendorlog\daterangepicker\daterangepicker.css" />
+    <Content Include="Templates\vendorlog\daterangepicker\daterangepicker.js" />
+    <Content Include="Templates\vendorlog\daterangepicker\moment.js" />
+    <Content Include="Templates\vendorlog\daterangepicker\moment.min.js" />
+    <Content Include="Templates\vendorlog\jquery\jquery-3.2.1.min.js" />
+    <Content Include="Templates\vendorlog\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="Templates\vendorlog\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="Templates\vendorlog\select2\select2.css" />
+    <Content Include="Templates\vendorlog\select2\select2.js" />
+    <Content Include="Templates\vendorlog\select2\select2.min.css" />
+    <Content Include="Templates\vendorlog\select2\select2.min.js" />
+    <Content Include="Templates\vendor\animate\animate.css" />
+    <Content Include="Templates\vendor\animsition\css\animsition.css" />
+    <Content Include="Templates\vendor\animsition\css\animsition.min.css" />
+    <Content Include="Templates\vendor\animsition\js\animsition.js" />
+    <Content Include="Templates\vendor\animsition\js\animsition.min.js" />
+    <Content Include="Templates\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Templates\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Templates\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Templates\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Templates\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Templates\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Templates\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Templates\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Templates\vendor\bootstrap\js\popper.js" />
+    <Content Include="Templates\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="Templates\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="Templates\vendor\countdowntime\countdowntime.js" />
+    <Content Include="Templates\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="Templates\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="Templates\vendor\daterangepicker\daterangepicker.css" />
+    <Content Include="Templates\vendor\daterangepicker\daterangepicker.js" />
+    <Content Include="Templates\vendor\daterangepicker\moment.js" />
+    <Content Include="Templates\vendor\daterangepicker\moment.min.js" />
+    <Content Include="Templates\vendor\isotope\isotope.pkgd.min.js" />
+    <Content Include="Templates\vendor\jqueryui\external\jquery\jquery.js" />
+    <Content Include="Templates\vendor\jqueryui\images\ui-icons_444444_256x240.png" />
+    <Content Include="Templates\vendor\jqueryui\images\ui-icons_555555_256x240.png" />
+    <Content Include="Templates\vendor\jqueryui\images\ui-icons_777620_256x240.png" />
+    <Content Include="Templates\vendor\jqueryui\images\ui-icons_777777_256x240.png" />
+    <Content Include="Templates\vendor\jqueryui\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Templates\vendor\jqueryui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Templates\vendor\jqueryui\index.html" />
+    <Content Include="Templates\vendor\jqueryui\jquery-ui.css" />
+    <Content Include="Templates\vendor\jqueryui\jquery-ui.js" />
+    <Content Include="Templates\vendor\jqueryui\jquery-ui.min.css" />
+    <Content Include="Templates\vendor\jqueryui\jquery-ui.min.js" />
+    <Content Include="Templates\vendor\jqueryui\jquery-ui.structure.css" />
+    <Content Include="Templates\vendor\jqueryui\jquery-ui.structure.min.css" />
+    <Content Include="Templates\vendor\jqueryui\jquery-ui.theme.css" />
+    <Content Include="Templates\vendor\jqueryui\jquery-ui.theme.min.css" />
+    <Content Include="Templates\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="Templates\vendor\lightbox2\css\lightbox.css" />
+    <Content Include="Templates\vendor\lightbox2\css\lightbox.min.css" />
+    <Content Include="Templates\vendor\lightbox2\images\close.png" />
+    <Content Include="Templates\vendor\lightbox2\images\loading.gif" />
+    <Content Include="Templates\vendor\lightbox2\images\next.png" />
+    <Content Include="Templates\vendor\lightbox2\images\prev.png" />
+    <Content Include="Templates\vendor\lightbox2\js\lightbox-plus-jquery.js" />
+    <Content Include="Templates\vendor\lightbox2\js\lightbox-plus-jquery.min.js" />
+    <Content Include="Templates\vendor\lightbox2\js\lightbox.js" />
+    <Content Include="Templates\vendor\lightbox2\js\lightbox.min.js" />
+    <Content Include="Templates\vendor\MagnificPopup\jquery.magnific-popup.js" />
+    <Content Include="Templates\vendor\MagnificPopup\jquery.magnific-popup.min.js" />
+    <Content Include="Templates\vendor\MagnificPopup\magnific-popup.css" />
+    <Content Include="Templates\vendor\parallax100\parallax100.js" />
+    <Content Include="Templates\vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="Templates\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="Templates\vendor\select2\select2.css" />
+    <Content Include="Templates\vendor\select2\select2.js" />
+    <Content Include="Templates\vendor\select2\select2.min.css" />
+    <Content Include="Templates\vendor\select2\select2.min.js" />
+    <Content Include="Templates\vendor\slick\ajax-loader.gif" />
+    <Content Include="Templates\vendor\slick\fonts\slick.svg" />
+    <Content Include="Templates\vendor\slick\slick-theme.css" />
+    <Content Include="Templates\vendor\slick\slick.css" />
+    <Content Include="Templates\vendor\slick\slick.js" />
+    <Content Include="Templates\vendor\slick\slick.min.js" />
+    <Content Include="Templates\vendor\sweetalert\sweetalert.min.js" />
+    <Content Include="UserControl\LoginStatus.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="WebFormabout.aspx" />
+    <Content Include="WebFormAdmin.aspx" />
+    <Content Include="WebFormCart.aspx" />
+    <Content Include="WebFormLogin.aspx" />
+    <Content Include="WebFormRegister.aspx" />
+    <Content Include="WebFormView.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HomePage.Master.cs">
+      <DependentUpon>HomePage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage.Master.designer.cs">
+      <DependentUpon>HomePage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Homepage.aspx.cs">
+      <DependentUpon>Homepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Homepage.aspx.designer.cs">
+      <DependentUpon>Homepage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PBKDF2Hash.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControl\LoginStatus.ascx.cs">
+      <DependentUpon>LoginStatus.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\LoginStatus.ascx.designer.cs">
+      <DependentUpon>LoginStatus.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormabout.aspx.cs">
+      <DependentUpon>WebFormabout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormabout.aspx.designer.cs">
+      <DependentUpon>WebFormabout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormAdmin.aspx.cs">
+      <DependentUpon>WebFormAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormAdmin.aspx.designer.cs">
+      <DependentUpon>WebFormAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormCart.aspx.cs">
+      <DependentUpon>WebFormCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormCart.aspx.designer.cs">
+      <DependentUpon>WebFormCart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormLogin.aspx.cs">
+      <DependentUpon>WebFormLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormLogin.aspx.designer.cs">
+      <DependentUpon>WebFormLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormRegister.aspx.cs">
+      <DependentUpon>WebFormRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormRegister.aspx.designer.cs">
+      <DependentUpon>WebFormRegister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormView.aspx.cs">
+      <DependentUpon>WebFormView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormView.aspx.designer.cs">
+      <DependentUpon>WebFormView.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HomePage.Master" />
+    <None Include="packages.config" />
+    <Content Include="Templates\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Templates\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Templates\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Templates\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Templates\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Templates\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Templates\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Templates\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Templates\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Templates\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Templates\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Templates\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Templates\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Templates\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Templates\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Templates\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Templates\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Templates\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Templates\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Templates\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Templates\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Templates\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Templates\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Templates\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Templates\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Templates\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Templates\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Templates\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Templates\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Templates\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Templates\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Templates\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Templates\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Templates\fonts\iconic\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="Templates\fonts\iconic\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="Templates\fonts\iconic\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="Templates\fonts\iconic\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="Templates\fonts\linearicons-v1.0.0\WebFont\Linearicons-Free.eot" />
+    <Content Include="Templates\fonts\linearicons-v1.0.0\WebFont\Linearicons-Free.ttf" />
+    <Content Include="Templates\fonts\linearicons-v1.0.0\WebFont\Linearicons-Free.woff" />
+    <Content Include="Templates\fonts\linearicons-v1.0.0\WebFont\Linearicons-Free.woff2" />
+    <Content Include="Templates\fonts\Montserrat\Montserrat-Black.ttf" />
+    <Content Include="Templates\fonts\Montserrat\Montserrat-BlackItalic.ttf" />
+    <Content Include="Templates\fonts\Montserrat\Montserrat-Bold.ttf" />
+    <Content Include="Templates\fonts\Montserrat\Montserrat-BoldItalic.ttf" />
+    <Content Include="Templates\fonts\Montserrat\Montserrat-ExtraBold.ttf" />
+    <Content Include="Templates\fonts\Montserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <Content Include="Templates\fonts\Montserrat\Montserrat-ExtraLight.ttf" />
+    <Content Include="Templates\fonts\Montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <Content Include="Templates\fonts\Montserrat\Montserrat-Italic.ttf" />
+    <Content Include="Templates\fonts\Montserrat\Montserrat-Light.ttf" />
+    <Content Include="Templates\fonts\Montserrat\Montserrat-LightItalic.ttf" />
+    <Content Include="Templates\fonts\Montserrat\Montserrat-Medium.ttf" />
+    <Content Include="Templates\fonts\Montserrat\Montserrat-MediumItalic.ttf" />
+    <Content Include="Templates\fonts\Montserrat\Montserrat-Regular.ttf" />
+    <Content Include="Templates\fonts\Montserrat\Montserrat-SemiBold.ttf" />
+    <Content Include="Templates\fonts\Montserrat\Montserrat-SemiBoldItalic.ttf" />
+    <Content Include="Templates\fonts\Montserrat\Montserrat-Thin.ttf" />
+    <Content Include="Templates\fonts\Montserrat\Montserrat-ThinItalic.ttf" />
+    <Content Include="Templates\fonts\PlayfairDisplay\PlayfairDisplay-Black.ttf" />
+    <Content Include="Templates\fonts\PlayfairDisplay\PlayfairDisplay-BlackItalic.ttf" />
+    <Content Include="Templates\fonts\PlayfairDisplay\PlayfairDisplay-Bold.ttf" />
+    <Content Include="Templates\fonts\PlayfairDisplay\PlayfairDisplay-BoldItalic.ttf" />
+    <Content Include="Templates\fonts\PlayfairDisplay\PlayfairDisplay-Italic.ttf" />
+    <Content Include="Templates\fonts\PlayfairDisplay\PlayfairDisplay-Regular.ttf" />
+    <Content Include="Templates\fonts\Poppins\Poppins-Black.ttf" />
+    <Content Include="Templates\fonts\Poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="Templates\fonts\Poppins\Poppins-Bold.ttf" />
+    <Content Include="Templates\fonts\Poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="Templates\fonts\Poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="Templates\fonts\Poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="Templates\fonts\Poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="Templates\fonts\Poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="Templates\fonts\Poppins\Poppins-Italic.ttf" />
+    <Content Include="Templates\fonts\Poppins\Poppins-Light.ttf" />
+    <Content Include="Templates\fonts\Poppins\Poppins-LightItalic.ttf" />
+    <Content Include="Templates\fonts\Poppins\Poppins-Medium.ttf" />
+    <Content Include="Templates\fonts\Poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="Templates\fonts\Poppins\Poppins-Regular.ttf" />
+    <Content Include="Templates\fonts\Poppins\Poppins-SemiBold.ttf" />
+    <Content Include="Templates\fonts\Poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="Templates\fonts\Poppins\Poppins-Thin.ttf" />
+    <Content Include="Templates\fonts\Poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="Templates\vendorlog\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Templates\vendorlog\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Templates\vendorlog\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Templates\vendorlog\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Templates\vendorlog\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Templates\vendorlog\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Templates\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Templates\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Templates\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Templates\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Templates\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Templates\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Templates\vendor\lightbox2\js\lightbox-plus-jquery.min.map" />
+    <Content Include="Templates\vendor\lightbox2\js\lightbox.min.map" />
+    <Content Include="Templates\vendor\slick\config.rb" />
+    <Content Include="Templates\vendor\slick\fonts\slick.eot" />
+    <Content Include="Templates\vendor\slick\fonts\slick.ttf" />
+    <Content Include="Templates\vendor\slick\fonts\slick.woff" />
+    <Content Include="Templates\vendor\slick\slick-theme.less" />
+    <Content Include="Templates\vendor\slick\slick-theme.scss" />
+    <Content Include="Templates\vendor\slick\slick.less" />
+    <Content Include="Templates\vendor\slick\slick.scss" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49153</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44305/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

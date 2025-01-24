@@ -1,0 +1,63 @@
+﻿body {
+    font-family: Arial, sans-serif;
+}
+
+h3 {
+    color: #333;
+}
+
+#form1 {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.gridViewContainer {
+    margin-top: 20px;
+}
+
+#GridView1,
+#GridViewCart {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+    #GridView1 th,
+    #GridView1 td,
+    #GridViewCart th,
+    #GridViewCart td {
+        padding: 8px;
+        border: 1px solid #ddd;
+    }
+
+    #GridView1 th,
+    #GridViewCart th {
+        background-color: #f2f2f2;
+    }
+
+#lblItem,
+#lblPrice {
+    font-weight: bold;
+    color: #007bff;
+}
+
+#txtQuantity {
+    padding: 5px;
+}
+
+#btnCart,
+#btnCheckOut,
+#btnConfirm,
+#btnCancel {
+    padding: 8px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+    #btnCart:hover,
+    #btnConfirm:hover,
+    #btnCancel:hover {
+        background-color: #0056b3;
+    }

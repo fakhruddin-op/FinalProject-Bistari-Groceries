@@ -1,0 +1,840 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="HomePage.master.cs" Inherits="FinalProject.HomePage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <!--<link rel="icon" type="image/png" href="<%= ResolveUrl("Templates/images/icons/favicon.png") %>" />-->
+
+	<link rel="stylesheet" type="text/css" href="path/to/slick.css"/>
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="<%= ResolveUrl("Templates/vendor/bootstrap/css/bootstrap.min.css") %>" />
+    <link rel="stylesheet" type="text/css" href="<%= ResolveUrl("Templates/fonts/font-awesome-4.7.0/css/font-awesome.min.css") %>" />
+    <link rel="stylesheet" type="text/css" href="<%= ResolveUrl("Templates/fonts/iconic/css/material-design-iconic-font.min.css") %>" />
+    <link rel="stylesheet" type="text/css" href="<%= ResolveUrl("Templates/fonts/linearicons-v1.0.0/icon-font.min.css") %>" />
+    <!-- Add other CSS references as needed -->
+
+    <!-- Vendor-specific stylesheets -->
+    <link rel="stylesheet" type="text/css" href="<%= ResolveUrl("Templates/vendor/animate/animate.css") %>" />
+    <link rel="stylesheet" type="text/css" href="<%= ResolveUrl("Templates/vendor/css-hamburgers/hamburgers.min.css") %>" />
+    <link rel="stylesheet" type="text/css" href="<%= ResolveUrl("Templates/vendor/select2/select2.min.css") %>" />
+    <link rel="stylesheet" type="text/css" href="<%= ResolveUrl("Templates/vendor/daterangepicker/daterangepicker.css") %>" />
+    <link rel="stylesheet" type="text/css" href="<%= ResolveUrl("Templates/vendor/slick/slick.css") %>" />
+    <link rel="stylesheet" type="text/css" href="<%= ResolveUrl("Templates/vendor/MagnificPopup/magnific-popup.css") %>" />
+    <link rel="stylesheet" type="text/css" href="<%= ResolveUrl("Templates/vendor/perfect-scrollbar/perfect-scrollbar.css") %>" />
+
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" type="text/css" href="<%= ResolveUrl("Templates/css/util.css") %>" />
+    <link rel="stylesheet" type="text/css" href="<%= ResolveUrl("Templates/css/main.css") %>" />
+	<style>		.menu-desktop {
+			justify-content: center;
+		}
+	</style>
+	<style>
+			.wrap-slick1 {
+				position: relative;
+			}
+
+			.item-slick1 {
+				height: calc(100vh - 40px);
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center center;
+			}
+
+			.rs1-slick1 .item-slick1 {
+				height: calc(100vh - 84px);
+			}
+
+			.rs2-slick1 .item-slick1 {
+				height: 100vh;
+			}
+
+			@media (max-width: 991px) {
+				.item-slick1 {
+					height: calc(100vh - 70px) !important;
+				}
+			}
+
+			.arrow-slick1 {
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: auto;
+				height: auto;
+				font-size: 80px;
+				color: rgba(0, 0, 0, 0.3);
+				position: absolute;
+				opacity: 0;
+
+				top: 50%;
+				-webkit-transform: translateY(-50%);
+				-moz-transform: translateY(-50%);
+				-ms-transform: translateY(-50%);
+				-o-transform: translateY(-50%);
+				transform: translateY(-50%);
+
+				z-index: 200;
+				-webkit-transition: all 0.4s;
+				-o-transition: all 0.4s;
+				-moz-transition: all 0.4s;
+				transition: all 0.4s;
+			}
+
+			.wrap-slick1:hover .arrow-slick1 {
+				opacity: 1;
+			}
+
+			.arrow-slick1:hover {
+				color: #7280e0;
+			}
+
+			.next-slick1 {
+				right: 50px;
+				left: auto;
+			}
+
+			.prev-slick1 {
+				left: 50px;
+				right: auto;
+			}
+
+			@media (max-width: 991px) {
+				.next-slick1 {
+					right: 15px;
+				}
+
+				.prev-slick1 {
+					left: 15px;
+				}
+			}
+
+			/*---------------------------------------------*/
+			.rs2-slick1 .arrow-slick1 {
+				color: rgba(255, 255, 255, 0.3);
+			}
+
+			.rs2-slick1 .arrow-slick1:hover {
+				color: #7280e0;
+			}
+
+			.wrap-slick1-dots {
+				position: absolute;
+				width: 100%;
+				left: 0;
+				bottom: 60px;
+			}
+
+			.slick1-dots {
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: flex;
+				justify-content: center;
+			}
+
+			.slick1-dots li {
+				max-width: 190px;
+				position: relative;
+				cursor: pointer;
+				margin-right: 1px;
+			}
+
+			.slick1-dots li img {
+				width: 100%;
+			}
+
+			.caption-dots-slick1 {
+				font-family: Poppins-ExtraLight;
+				font-size: 16px;
+				line-height: 1.3;
+				color: #fff;
+				text-align: center;
+
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				background-color: rgba(0, 0, 0, 0.5);
+				padding: 5px;
+
+				-webkit-transition: all 0.4s;
+				-o-transition: all 0.4s;
+				-moz-transition: all 0.4s;
+				transition: all 0.4s;
+				opacity: 0;
+			}
+
+			.slick1-dots li:hover .caption-dots-slick1 {
+				opacity: 1;
+			}
+
+			.slick1-dots li.slick-active .caption-dots-slick1 {
+				opacity: 1;
+			}
+
+			@media (max-width: 575px) {
+				.caption-dots-slick1 {
+					font-size: 13px;
+				}
+
+				.wrap-slick1-dots {
+					bottom: 25px;
+				}
+			}
+
+
+			/*//////////////////////////////////////////////////////////////////
+[ Slick2 ]*/
+
+			.wrap-slick2 {
+				position: relative;
+				margin-right: -15px;
+				margin-left: -15px;
+			}
+
+			/* ------------------------------------ */
+			.arrow-slick2 {
+				position: absolute;
+				z-index: 100;
+				top: calc((100% - 60px) / 2);
+				-webkit-transform: translateY(-50%);
+				-moz-transform: translateY(-50%);
+				-ms-transform: translateY(-50%);
+				-o-transform: translateY(-50%);
+				transform: translateY(-50%);
+				font-size: 39px;
+				color: #ccc;
+
+				-webkit-transition: all 0.4s;
+				-o-transition: all 0.4s;
+				-moz-transition: all 0.4s;
+				transition: all 0.4s;
+			}
+
+			.arrow-slick2:hover {
+				color: #666;
+			}
+
+			.next-slick2 {
+				right: -40px;
+			}
+
+			.prev-slick2 {
+				left: -40px;
+			}
+
+			@media (max-width: 1300px) {
+				.next-slick2 {
+					right: 0px;
+				}
+
+				.prev-slick2 {
+					left: 0px;
+				}
+			}
+
+
+			/*//////////////////////////////////////////////////////////////////
+[ Slick3 ]*/
+			.wrap-slick3 {
+				position: relative;
+			}
+
+			/*---------------------------------------------*/
+			.wrap-slick3-arrows {
+				position: absolute;
+				z-index: 100;
+				width: 83.333333%;
+				right: 0;
+				top: calc(50% - 20px);
+			}
+
+			.arrow-slick3 {
+				font-size: 25px;
+				color: #fff;
+
+				position: absolute;
+				top: 0;
+				width: 40px;
+				height: 40px;
+				background-color: rgba(0, 0, 0, 0.5);
+
+				-webkit-transition: all 0.4s;
+				-o-transition: all 0.4s;
+				-moz-transition: all 0.4s;
+				transition: all 0.4s;
+			}
+
+			.arrow-slick3:hover {
+				background-color: rgba(0, 0, 0, 0.9);
+			}
+
+			.prev-slick3 {
+				left: 0px;
+			}
+
+			.next-slick3 {
+				right: 0px;
+			}
+
+			/*---------------------------------------------*/
+			.wrap-slick3-dots {
+				width: 11.111111%;
+			}
+
+			.slick3 {
+				width: 83.333333%;
+			}
+
+			.slick3-dots li {
+				display: block;
+				position: relative;
+				width: 100%;
+				margin-bottom: 27px;
+			}
+
+			.slick3-dots li img {
+				width: 100%;
+			}
+
+			.slick3-dot-overlay {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				cursor: pointer;
+				border: 2px solid transparent;
+				-webkit-transition: all 0.4s;
+				-o-transition: all 0.4s;
+				-moz-transition: all 0.4s;
+				transition: all 0.4s;
+			}
+
+			.slick3-dot-overlay:hover {
+				border-color: #ccc;
+			}
+
+			.slick3-dots .slick-active .slick3-dot-overlay {
+				border-color: #ccc;
+			}
+
+
+
+			/*//////////////////////////////////////////////////////////////////
+[ RS Magnific-Popup ]*/
+			.mfp-bg {
+				z-index: 10000;
+				background-color: #000;
+				opacity: 0.9;
+			}
+
+			.mfp-wrap {
+				z-index: 10000;
+			}
+
+			.mfp-arrow:after,
+			.mfp-arrow:before {
+				display: none;
+			}
+
+			.mfp-arrow {
+				-webkit-transition: all 0.4s;
+				-o-transition: all 0.4s;
+				-moz-transition: all 0.4s;
+				transition: all 0.4s;
+			}
+
+			button.mfp-arrow-right {
+				background-image: url(../images/icons/icon-next.png);
+				background-position: center center;
+				background-repeat: no-repeat;
+			}
+
+			button.mfp-arrow-left {
+				background-image: url(../images/icons/icon-prev.png);
+				background-position: center center;
+				background-repeat: no-repeat;
+			}
+
+			button.mfp-close {
+				width: 75px !important;
+				height: 58px !important;
+				line-height: 44px;
+				position: fixed;
+				right: 0;
+				top: 0;
+				color: transparent !important;
+				background-image: url(../images/icons/icon-close.png);
+				background-position: center center;
+				background-repeat: no-repeat;
+				cursor: pointer !important;
+				-webkit-transition: all 0.4s;
+				-o-transition: all 0.4s;
+				-moz-transition: all 0.4s;
+				transition: all 0.4s;
+			}
+
+			/* overlay at start */
+			.mfp-fade.mfp-bg {
+				opacity: 0;
+
+				-webkit-transition: all 0.3s ease-out;
+				-moz-transition: all 0.3s ease-out;
+				transition: all 0.3s ease-out;
+			}
+
+			/* overlay animate in */
+			.mfp-fade.mfp-bg.mfp-ready {
+				opacity: 0.9;
+			}
+
+			/* overlay animate out */
+			.mfp-fade.mfp-bg.mfp-removing {
+				opacity: 0;
+			}
+
+			/* content at start */
+			.mfp-fade.mfp-wrap .mfp-content {
+				opacity: 0;
+
+				-webkit-transition: all 0.3s ease-out;
+				-moz-transition: all 0.3s ease-out;
+				transition: all 0.3s ease-out;
+			}
+
+			/* content animate it */
+			.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+				opacity: 1;
+			}
+
+			/* content animate out */
+			.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+				opacity: 0;
+			}
+
+			#footer {
+			  position: absolute;
+			  bottom: 0;
+			  width: 100%;
+			  height: 2.5rem;            /* Footer height */
+			}
+		</style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="animsition">
+    <!-- Header -->
+    <header>
+        <!-- Header desktop -->
+        <div class="container-menu-desktop">
+            <!-- Topbar -->
+            <div class="top-bar">
+                <div class="content-topbar flex-sb-m h-full container">
+                    <div class="left-top-bar">
+                        Free delivery for standard order over RM 100.00
+                    </div>
+
+                    <div class="right-top-bar flex-w h-full">
+
+                        <a href="Homepage.aspx" class="flex-c-m trans-04 p-lr-25">
+                            Login
+                        </a>
+
+                      
+                        <a href="#" class="flex-c-m trans-04 p-lr-25">
+							MYR
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Menu desktop -->
+			<div class="menu-desktop" style"background:transparent!important;">
+				<ul class="main-menu">
+					<li class="active-menu">
+						<a href="Homepage.aspx">Home</a>
+					
+					</li>
+
+					
+
+					<li>
+						<a href="WebFormabout.aspx">About</a>
+					</li>
+
+					
+				</ul>
+			</div>
+			
+		</div>	
+
+		<!-- Header Mobile -->
+		<div class="wrap-header-mobile">
+			<!-- Logo moblie -->		
+			<div class="logo-mobile">
+				<a href="index.html"><img src="Templates/images/icons/logo-01.png" alt="IMG-LOGO"></a>
+			</div>
+
+			<!-- Icon header -->
+			<div class="wrap-icon-header flex-w flex-r-m m-r-15">
+				
+
+			
+			</div>
+
+			<!-- Button show menu -->
+			<div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
+			</div>
+		</div>
+
+
+		<!-- Menu Mobile -->
+		<div class="menu-mobile">
+			<ul class="topbar-mobile">
+				<li>
+					<div class="left-top-bar">
+						Free shipping for standard order over RM 100.00
+					</div>
+				</li>
+
+				<li>
+					<div class="right-top-bar flex-w h-full">
+						
+
+						<a href="#" class="flex-c-m p-lr-10 trans-04">
+							My Account
+						</a>
+
+
+						<a href="#" class="flex-c-m p-lr-10 trans-04">
+						<a href="#" class="flex-c-m p-lr-10 trans-04">
+							MYR
+						</a>
+					</div>
+				</li>
+			</ul>
+		
+			<ul class="main-menu-m">
+				<li>			
+
+					<a href="homepage.html">Home</a>
+					<ul class="sub-menu-m">
+					</ul>
+					<span class="arrow-main-menu-m">
+						<i class="fa fa-angle-right" aria-hidden="true"></i>
+					</span>
+				</li>
+
+				<li>
+					<a href="product.html">Shop</a>
+				</li>
+
+				<li>
+					<a href="shoping-cart.html" class="label1 rs1" data-label1="hot">Features</a>
+				</li>
+
+				<li>
+					<a href="blog.html">Blog</a>
+				</li>
+
+				<li>
+					<a href="about.html">About</a>
+				</li>
+
+				<li>
+					<a href="contact.html">Contact</a>
+				</li>
+			</ul>
+		</div>
+
+		<!-- Modal Search -->
+		<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
+			<div class="container-search-header">
+				<button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
+					<img src="Templates/images/icons/icon-close2.png" alt="CLOSE">
+				</button>
+
+				<form class="wrap-search-header flex-w p-l-15">
+					<button class="flex-c-m trans-04">
+						<i class="zmdi zmdi-search"></i>
+					</button>
+					<input class="plh3" type="text" name="search" placeholder="Search...">
+				</form>
+			</div>
+		</div>
+	</header>
+	<section class="section-slide">
+		
+		</section>
+    <form id="form1" runat="server" style="padding:80px 100px">
+        <div>
+           
+			
+			<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+
+
+        </div>
+    </form>
+		<!-- Footer -->
+		<footer class="bg3 p-t-75 p-b-32">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6 col-lg-3 p-b-50">
+						<h4 class="stext-301 cl0 p-b-30">
+							Categories
+						</h4>
+
+						<ul>
+							<li class="p-b-10">
+								<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+									Fresh Chicken
+								</a>
+							</li>
+
+							<li class="p-b-10">
+								<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+									Eggs
+								</a>
+							</li>
+
+							<li class="p-b-10">
+								<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+									Frozen Fish </a>
+							</li>
+
+							<li class="p-b-10">
+								<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+									Frozen Seafood
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="col-sm-6 col-lg-3 p-b-50">
+						<h4 class="stext-301 cl0 p-b-30">
+							Help
+						</h4>
+
+						<ul>
+							<li class="p-b-10">
+								<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+									Track Order
+								</a>
+							</li>
+
+							<li class="p-b-10">
+								<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+									Returns
+								</a>
+							</li>
+
+							<li class="p-b-10">
+								<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+									Delivery
+								</a>
+							</li>
+
+							<li class="p-b-10">
+
+							</li>
+						</ul>
+					</div>
+
+					<div class="col-sm-6 col-lg-3 p-b-50">
+						<h4 class="stext-301 cl0 p-b-30">
+							GET IN TOUCH
+						</h4>
+
+						<p class="stext-107 cl7 size-201">
+							Any questions? Let us know on the Bisteri Groceries website at 8th floor, 379 Hudson St, New York, NY
+							10018 or call us on (+60) 12 345 6789. </p>
+
+						<div class="p-t-27">
+							<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+								<i class="fa fa-facebook"></i>
+							</a>
+
+							<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+								<i class="fa fa-instagram"></i>
+							</a>
+
+							<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+								<i class="fa fa-pinterest-p"></i>
+							</a>
+						</div>
+					</div>
+
+					<div class="col-sm-6 col-lg-3 p-b-50">
+						<h4 class="stext-301 cl0 p-b-30">
+							Newsletter
+						</h4>
+
+						<form>
+							<div class="wrap-input1 w-full p-b-4">
+								<input class="input1 bg-none plh1 stext-107 cl7" type="text" name="email"
+									placeholder="you@gmail.com">
+								<div class="focus-input1 trans-04"></div>
+							</div>
+
+							<div class="p-t-18">
+								<button class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
+									Send
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+
+				<div class="p-t-40">
+					<div class="flex-c-m flex-w p-b-18">
+
+					</div>
+
+					<p class="stext-107 cl6 txt-center">
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+					</p>
+				</div>
+			</div>
+		</footer>
+
+		<script src="Templates/vendor/jquery/jquery-3.2.1.min.js"></script>
+		<script src="Templates/vendor/animsition/js/animsition.min.js"></script>
+		<script src="Templates/vendor/bootstrap/js/popper.js"></script>
+		<script src="Templates/vendor/bootstrap/js/bootstrap.min.js"></script>
+		<script src="Templates/vendor/select2/select2.min.js"></script>
+		<script>
+			$(".js-select2").each(function () {
+				$(this).select2({
+					minimumResultsForSearch: 20,
+					dropdownParent: $(this).next('.dropDownSelect2')
+				});
+			})
+		</script>
+		<script src="Templates/vendor/daterangepicker/moment.min.js"></script>
+		<script src="Templates/vendor/daterangepicker/daterangepicker.js"></script>
+		<script src="Templates/vendor/slick/slick.min.js"></script>
+		<script src="Templates/js/slick-custom.js"></script>
+		<script src="Templates/vendor/parallax100/parallax100.js"></script>
+		<script>
+			$('.parallax100').parallax100();
+		</script>
+		<script src="Templates/vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
+		<script>
+			$('.gallery-lb').each(function () {
+				$(this).magnificPopup({
+					delegate: 'a',
+					type: 'image',
+					gallery: {
+						enabled: true
+					},
+					mainClass: 'mfp-fade'
+				});
+			});
+		</script>
+		<script src="Templates/vendor/isotope/isotope.pkgd.min.js"></script>
+		<script src="/Templates/vendor/sweetalert/sweetalert.min.js"></script>
+		<script>
+			$('.js-addwish-b2').on('click', function (e) {
+				e.preventDefault();
+			});
+
+			$('.js-addwish-b2').each(function () {
+				var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
+				$(this).on('click', function () {
+					swal(nameProduct, "is added to wishlist !", "success");
+					$(this).addClass('js-addedwish-b2');
+					$(this).off('click');
+				});
+			});
+
+			$('.js-addwish-detail').each(function () {
+				var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
+				$(this).on('click', function () {
+					swal(nameProduct, "is added to wishlist !", "success");
+					$(this).addClass('js-addedwish-detail');
+					$(this).off('click');
+				});
+			});
+
+			$('.js-addcart-detail').each(function () {
+				var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
+				$(this).on('click', function () {
+					swal(nameProduct, "is added to cart !", "success");
+				});
+			});
+		</script>
+		<script src="Templates/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+		<script>
+			$('.js-pscroll').each(function () {
+				$(this).css('position', 'relative');
+				$(this).css('overflow', 'hidden');
+				var ps = new PerfectScrollbar(this, {
+					wheelSpeed: 1,
+					scrollingThreshold: 1000,
+					wheelPropagation: false,
+				});
+
+				$(window).on('resize', function () {
+					ps.update();
+				})
+			});
+		</script>
+		<script type="text/javascript" src="path/to/slick.min.js"></script>
+
+
+		<script>
+			$(document).ready(function () {
+				// Initialize the Slick slider without arrows and dots
+				$('.slick1').slick({
+					arrows: false, // Remove navigation arrows
+					dots: false,   // Remove pagination dots
+					autoplay: true,
+					autoplaySpeed: 2500, // Set the autoplay speed in milliseconds (adjust as needed)
+					// Add other Slick settings as needed
+				});
+			});
+		</script>
+		<script>
+			$(document).ready(function () {
+				// Toggle filter panel
+				$('.js-show-filter').click(function () {
+					$('.panel-filter').toggleClass('dis-none');
+				});
+
+				// Toggle search panel
+				$('.js-show-search').click(function () {
+					$('.panel-search').toggleClass('dis-none');
+				});
+			});
+        </script>
+		<script src="Templates/js/main.js"></script>
+</body>
+</html>
